@@ -1,5 +1,32 @@
 <?php declare(strict_types=1);
     // php code here
+
+    // check if form was submitted
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // form was submitted
+
+        // connect to db
+        include('../connect-db.php');
+
+        // get and protect values the mysqli way
+        $firstname = mysqli_real_escape_string($conn, $_POST['fname']);
+        $lastname = mysqli_real_escape_string($conn, $_POST['lname']);
+        $username = mysqli_real_escape_string($conn, $_POST['uname']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['psw']);
+
+        // construct query
+        $sql = "INSERT INTO applicants(firstname, lastname, username, email, pass_word) VALUES('$firstname', '$lastname', '$username', '$email', '$password')";
+
+        // make query and check for errors
+        if (mysqli_query($conn, $sql)) {
+            // success
+            echo "Query successful!";
+        } else {
+            // failed
+            echo "Query error: " . mysqli_error($conn);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
