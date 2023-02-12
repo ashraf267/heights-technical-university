@@ -57,7 +57,11 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
         header('Location: admissions-form.php');
     }
 
-    ($isFound[0] == true && $isFound[(count($isFound)) - 1] == true) ? redirect() : print_r('incorrect username or password');
+    function errorMsg() {
+        echo "<script>window.alert('Incorrect username/password')</script>";
+    }
+
+    ($isFound[0] == true && $isFound[(count($isFound)) - 1] == true) ? redirect() : errorMsg();
 }
 ?>
 <!DOCTYPE html>
