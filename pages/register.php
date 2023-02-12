@@ -21,7 +21,7 @@
         // make query and check for errors
         if (mysqli_query($conn, $sql)) {
             // success
-            echo "Query successful!";
+            // echo "Query successful!";
         } else {
             // failed
             echo "Query error: " . mysqli_error($conn);
