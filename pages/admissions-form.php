@@ -3,6 +3,12 @@
 
     // greet user with js alert
 
+    // session
+    session_start();
+    $username = $_SESSION['uname'];
+
+    echo "<script>window.alert('Welcome, $username')</script>";
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // form submitted
 
@@ -31,14 +37,19 @@
         // make query and check for errors
         if (mysqli_query($conn, $sql)) {
             // success
-            echo "Query successful!" . "\n";
+
+            // redirect to admissions page
+            redirect();
         } else {
             // failed
             echo "Query error: " . mysqli_error($conn) . "\n";
         }
     }
 
-    // start session
+    // function
+    function redirect() {
+        header('Location: ../index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -214,7 +225,7 @@
             </div>
         </form>
         <div class="center-box">
-            <button type="submit" form="adms-form" class="submit-btn">submit <i class="fa-solid fa-check"></i></button:type>
+            <button type="submit" onclick="window.alert('Form submitted successfully!')" form="adms-form" class="submit-btn">submit <i class="fa-solid fa-check"></i></button:type>
         </div>
     </body>
 </html>
