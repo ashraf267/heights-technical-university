@@ -92,6 +92,6 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
     </form>
     <button type="submit" form="login-form" class="submit-btn">login <i class="fa-solid fa-arrow-right"></i></button>
     <!-- or create an account link -->
-    <a href="register.php">or create an account here</a>
+    <a href="register.php" id="or-link">Or create a new account here</a>
 </body>
 </html>

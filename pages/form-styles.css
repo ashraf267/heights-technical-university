@@ -6,10 +6,11 @@
 }
 
 .header h1 {
-    border: 1px solid red;
+    border: 1px solid black;
     text-align: center;
     padding: 5px;
     text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header a {
@@ -32,6 +33,20 @@ form {
 
 label {
     display: block;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fields {
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 1px;
+    margin: 3px 1px;
+}
+
+.req {
+    color: red;
+    padding: 0 1px;
+    text-align: center;
 }
 
 /* submit-btn */
@@ -41,10 +56,21 @@ label {
     margin: 5px 10px;
     font-size: 17px;
     padding: 5px 3px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
 }
 
 .submit-btn i {
-    border: 1px solid red;
+    border: 1px solid black;
     margin-left: 2px;
     padding: 2px 1px;
+}
+
+#or-link {
+    border: 1px solid black;
+    padding: 5px;
+    color: red;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
