@@ -188,7 +188,7 @@
         }
 
         #footer-logo img {
-            width: 65%;
+            width: 40%;
             padding: 3px;
             margin: 2px;
         }
@@ -319,7 +319,7 @@
         </div>
     </div>
     <div class="footer">
-        <a id="footer-logo" href="#"><img src="images\asset-5.png"></a>
+        <a id="footer-logo" href="#"><img src="images\asset-8.png"></a>
         <div id="icon-emails">
             <span><i class="fa-regular fa-envelope"></i><small>info@heightstechuni.edu.ng</small></span>
             <span><i class="fa-regular fa-envelope"></i><small>admissions@heightstechuni.edu.ng</small></span>
