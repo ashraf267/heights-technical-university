@@ -25,13 +25,10 @@
         }
 
         .header {
-            border: 1px solid red;
             width: 100%;
             height: auto;
             position: fixed;
             top: 0;
-            padding: 0 10px;
-            /* background-color: rgba(66, 33, 11, 1); */
             background-color: rgba(246, 241, 233, 0.5);
             display: flex;
             flex-direction: row;
@@ -40,57 +37,56 @@
 
         #navbar-logo {
             text-decoration: none;
-            border: 1px solid red;
             display: inline-block;
+            position: relative;
+            left: 10px;
         }
 
         #navbar-logo img {
             width: 22%;
-            /* margin: 2px 3px; */
         }
 
         #navbar-btn {
-            /* float: right; */
-            /* position: relative; */
-            /* right: 10px; */
+            position: relative;
+            right: 10px;
             font-size: 35px;
             background-color: transparent;
             border: none;
             font-weight: bold;
-            border: 1px solid white;
             color: #42210b;
         }
 
         #navbar {
-            /* add background-color here */
-            background-color: #42210b;
+            /* background-color: #42210b; */
+            background-color: rgba(79, 32, 13, 1);
             display: none;
-            padding: 3px 1px;
-            border-bottom: 2px solid #f7921e;
-            /* later, I'd like to add a transition property here */
+            width: 100%;
+            height: 520px;
+            position: absolute;
+            flex-direction: column;
+            justify-content: space-around;
         }
 
         #navbar ul {
-            text-align: center;
             list-style-type: none;
         }
 
         #navbar ul li {
-            font-size: 25px;
-            font-family: 'Montserrat', sans-serif;
-            margin: 20px 1px;
+            font-size: 30px;
+            margin: 35px 25px 5px;
+            padding: 10px;
+            text-align: center;
         }
 
         #navbar ul li a {
             text-decoration: none;
-            text-transform: capitalize;
-            padding: 1px 5px;
-            /* add color here */
-            color: #f7921e;
+            text-transform: uppercase;
+            color: white;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
         }
 
         #post-header {
-            border: 1px solid black;
             width: 100%;
             z-index: -1;
         }
@@ -129,14 +125,12 @@
             background-repeat: no-repeat;
             background-size: cover;
             padding: 85px 15px 20px;
-            border: 1px solid red;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         #banner .children {
-            border: 1px solid white;
             text-align: center;
             margin: 15px 10px 5px;
         }
@@ -168,8 +162,11 @@
 
         #boxes {
             border: 1px solid black;
-            padding: 5px 10px;
+            padding: 25px 15px;
             margin: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
 
         .box {
@@ -181,10 +178,11 @@
         .box h2 {
             border: 1px solid green;
             text-align: center;
-            font-size: 30px;
+            font-size: 38px;
             padding: 10px 20px;
             margin: 15px 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 700;
         }
 
         .box a {
@@ -204,18 +202,17 @@
         /* footer */
         .footer {
             background-color: #42210b;
+            font-family: 'Ubuntu', sans-serif;
         }
 
         #footer-logo {
             text-decoration: none;
-            border: 1px solid white;
             display: inline-block;
         }
 
         #footer-logo img {
             width: 100%;
-            padding: 3px;
-            margin: 2px;
+            margin: 5px;
         }
 
         #icon-emails {
@@ -225,7 +222,7 @@
         #icon-emails span {
             display: block;
             margin: 5px 1px;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
             color: rgba(247, 146, 30, 0.5);
         }
 
@@ -240,9 +237,8 @@
 
         .sm-icons h4 {
             margin: 2px 0 10px;
-            text-transform: capitalize;
-            font-weight: normal;
-            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
             color: #f7921e;
         }
 
@@ -261,9 +257,9 @@
         }
 
         #links-x2 h3 {
-            text-transform: capitalize;
+            text-transform: uppercase;
             margin: 1px;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             color: #f7921e;
         }
 
@@ -272,7 +268,7 @@
         }
 
         #links-x2 ul li {
-            border-bottom: 1px dotted grey;
+            border-bottom: 1px dotted rgba(246, 241, 233, 0.5);
             padding: 10px 0;
             list-style-type: none;
         }
@@ -281,23 +277,23 @@
             text-decoration: none;
             text-transform: capitalize;
             font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
             color: rgba(247, 146, 30, 0.5);
         }
 
         .footer #cpyrt-wrapper {
             /* add background-color here */
             background-color: #f7921e;
-            margin: 2px 1px 0;
-            padding: 3px;
+            margin: 15px 0 0;
+            padding: 4px;
         }
 
         .footer #cpyrt-wrapper p {
             text-transform: capitalize;
-            font-size: 14px;
-            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
             text-align: center;
-            /* add color here */
+            font-weight: 400;
+            color: #42210b;
         }
     </style>
 </head>
@@ -379,8 +375,10 @@
         var x = document.getElementById('post-header');
 
         function openNav() {
-            item1.style.display = "block";
+            item1.style.display = "flex";
             item2.innerHTML = "&#9747;";
+            item2.style.zIndex = "1";
+            item2.style.color = "rgb(247, 146, 30)";
 
             // test
             console.log("nav opened!");
@@ -390,6 +388,7 @@
             item1.style.display = "none";
             x.style.zIndex = "1";
             item2.innerHTML = "&#9776;";
+            item2.style.color = "rgb(66, 33, 11)";
 
             // test
             console.log("nav closed!");
