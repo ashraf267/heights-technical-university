@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c84a86a0b9.js" crossorigin="anonymous"></script>
     <title>Undergraduate Admissions | HTU</title>
     <style>
@@ -24,13 +24,14 @@
         }
 
         .header {
+            border: 1px solid red;
             width: 100%;
             height: auto;
             position: fixed;
             top: 0;
-            padding: 5px 1px 0;
-            /* add background-color here */
-            background-color: rgba(66, 33, 11, 0.7);
+            padding: 4px 2px 0;
+            /* background-color: rgba(66, 33, 11, 1); */
+            /* transparent background */
         }
 
         #navbar-logo {
@@ -38,19 +39,23 @@
         }
 
         #navbar-logo img {
-            width: 10%;
+            border: 1px solid white;
+            width: 5%;
             margin: 2px 3px;
             padding: 2px;
         }
+
         #navbar-btn {
             float: right;
             position: relative;
             right: 10px;
-            font-size: 29px;
+            font-size: 35px;
             background-color: transparent;
             border: none;
             font-weight: bold;
             padding: 1px 2px;
+            border: 1px solid white;
+            color: #42210b;
         }
 
         #navbar {
@@ -116,21 +121,29 @@
         }
 
         #banner {
+            /* remove this */
             background-color: #F2CD5C;
+            /* add a background image here */
+            background-image: url('https://images.pexels.com/photos/2566121/pexels-photo-2566121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-repeat: no-repeat;
+            background-size: cover;
             padding: 50px 10px 5px;
+            border: 1px solid red;
         }
 
         #banner .children {
             color: #42210b;
             text-align: center;
             margin: 5px;
-            font-family: 'Montserrat', sans-serif;
         }
 
         #banner h1 {
+            border: 1px solid red;
             padding: 35px 10px;
-            font-size: 40px;
-            text-transform: capitalize;
+            font-size: 55px;
+            text-transform: uppercase;
+            font-family: 'Play', sans-serif;
+            font-weight: 700;
         }
 
         #banner h2 {
