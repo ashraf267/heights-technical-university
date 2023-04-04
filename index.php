@@ -21,6 +21,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         .header {
@@ -29,31 +30,33 @@
             height: auto;
             position: fixed;
             top: 0;
-            padding: 4px 2px 0;
+            padding: 0 10px;
             /* background-color: rgba(66, 33, 11, 1); */
-            /* transparent background */
+            background-color: rgba(246, 241, 233, 0.5);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         #navbar-logo {
             text-decoration: none;
+            border: 1px solid red;
+            display: inline-block;
         }
 
         #navbar-logo img {
-            border: 1px solid white;
-            width: 5%;
-            margin: 2px 3px;
-            padding: 2px;
+            width: 22%;
+            /* margin: 2px 3px; */
         }
 
         #navbar-btn {
-            float: right;
-            position: relative;
-            right: 10px;
+            /* float: right; */
+            /* position: relative; */
+            /* right: 10px; */
             font-size: 35px;
             background-color: transparent;
             border: none;
             font-weight: bold;
-            padding: 1px 2px;
             border: 1px solid white;
             color: #42210b;
         }
@@ -90,7 +93,6 @@
             border: 1px solid black;
             width: 100%;
             z-index: -1;
-            /* add background-color here */
         }
 
         /* styles for the middle contents comes here */
@@ -101,18 +103,19 @@
         }
 
         .action-btn {
-            text-transform: uppercase;
+            text-transform: capitalize;
             text-decoration: none;
             text-align: center;
             color: #42210b;
             background-color: #f7921e;
-            font-size: 20px;
+            font-size: 27px;
             font-weight: bold;
-            border-left: 5px solid #42210b;
+            border-left: 6px solid #42210b;
             transition: color 1s, background-color 1s;
             display: inline-block;
-            padding: 14px 25px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 15px 30px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
         }
 
         .action-btn:hover {
@@ -121,25 +124,25 @@
         }
 
         #banner {
-            /* remove this */
-            background-color: #F2CD5C;
             /* add a background image here */
             background-image: url('https://images.pexels.com/photos/2566121/pexels-photo-2566121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-repeat: no-repeat;
             background-size: cover;
-            padding: 50px 10px 5px;
+            padding: 85px 15px 20px;
             border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         #banner .children {
-            color: #42210b;
+            border: 1px solid white;
             text-align: center;
-            margin: 5px;
+            margin: 15px 10px 5px;
         }
 
         #banner h1 {
-            border: 1px solid red;
-            padding: 35px 10px;
+            padding: 25px 0;
             font-size: 55px;
             text-transform: uppercase;
             font-family: 'Play', sans-serif;
@@ -147,12 +150,20 @@
         }
 
         #banner h2 {
-            padding: 10px;
+            padding: 15px 0;
             text-transform: uppercase;
+            color: white;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            font-size: 48px;
         }
 
         #banner p {
-            padding: 5px;
+            padding: 10px 0;
+            color: white;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            font-size: 32px;
         }
 
         #boxes {
@@ -192,16 +203,17 @@
 
         /* footer */
         .footer {
-            /* add background-color here */
             background-color: #42210b;
         }
 
         #footer-logo {
             text-decoration: none;
+            border: 1px solid white;
+            display: inline-block;
         }
 
         #footer-logo img {
-            width: 40%;
+            width: 100%;
             padding: 3px;
             margin: 2px;
         }
@@ -291,7 +303,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" id="navbar-logo"><img src="images\asset-3.png" alt="htu logo"></a>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" id="navbar-logo"><img src="images\mylogo.svg" alt="htu logo"></a>
         <button onclick="(this.innerHTML == '&#9776;') ? openNav() : closeNav();" id="navbar-btn">&#9776;</button>
         <div id="navbar">
             <ul>
@@ -332,7 +344,7 @@
         </div>
     </div>
     <div class="footer">
-        <a id="footer-logo" href="#"><img src="images\asset-8.png"></a>
+        <a id="footer-logo" href="#"><img src="images\htulogo.svg"></a>
         <div id="icon-emails">
             <span><i class="fa-regular fa-envelope"></i><small>info@heightstechuni.edu.ng</small></span>
             <span><i class="fa-regular fa-envelope"></i><small>admissions@heightstechuni.edu.ng</small></span>
