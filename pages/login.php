@@ -4,17 +4,11 @@
 
 // check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // start session
-    session_start();
-
-    $_SESSION['uname'] = $_POST['uname'];
-    $username = $_SESSION['uname'];
-    $password = $_POST['psw'];
+    $username = $_POST['uname'];
+    $password = $_POST['password'];
 
     // call findApplicant function here
     findApplicant($username, $password);
-
-    // echo $username . "\n" . $password;
 }
 
 function findApplicant(string $user_name, string $pass_word, array $isFound = array(false, false)) {
@@ -22,7 +16,7 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
     include('../connect-db.php');
 
     // construct query
-    $sql = 'SELECT id, username, pass_word FROM applicants ORDER BY created_at';
+    $sql = 'SELECT id, username, password FROM applicants ORDER BY created_at';
 
     // make query
     $result = mysqli_query($conn, $sql);
@@ -45,7 +39,7 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
             $isFound[0] = true;
 
             // then find password
-            if ($applicant['pass_word'] === $pass_word) {
+            if ($applicant['password'] === $pass_word) {
                 // password found
                 $isFound[(count($isFound)) - 1] = true;
             }
@@ -191,10 +185,10 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
         <h1>Welcome back!</h1>
         <p>Login to your account</p>
     </header>
-    <form id="login-form">
+    <form id="login-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div>
-            <label for="username">username<span>*</span></label>
-            <input class="fields" type="text" name="username" id="username" required>
+            <label for="uname">username<span>*</span></label>
+            <input class="fields" type="text" name="uname" id="uname" required>
         </div>
         <div>
             <label for="psw">password<span>*</span></label>

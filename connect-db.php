@@ -2,7 +2,7 @@
     // php code here
 
     // connect to database
-    $conn = mysqli_connect('localhost', 'devashraf', 'test456', 'ht_university');
+    $conn = mysqli_connect('localhost', 'deveverybody', 'everybodydev', 'ht-university');
 
     // check connection
     if (!$conn) {
