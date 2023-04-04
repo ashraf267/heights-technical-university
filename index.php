@@ -203,6 +203,7 @@
         .footer {
             background-color: #42210b;
             font-family: 'Ubuntu', sans-serif;
+            padding: 20px 5px 0;
         }
 
         #footer-logo {

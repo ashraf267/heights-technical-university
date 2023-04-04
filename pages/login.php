@@ -70,28 +70,139 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c84a86a0b9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="form-styles.css">
-    <title>Login | HTU</title>
+    <title>Login | HeightsTU</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(246, 241, 233, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0 40px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin: 5px 0;
+        }
+
+        header p {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        header a {
+            display: block;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #42210b;
+            font-size: 50px;
+            font-weight: 700;
+            font-family: 'Play', sans-serif;
+            margin: 10px 0;
+        }
+
+        /* login form */
+        #login-form {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 25px 50px;
+        }
+
+        #login-form > div {
+            margin: 5px 0 10px;
+        }
+
+        #login-form > div > label {
+            display: block;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 15px;
+            margin: 5px 0;
+            padding: 5px 0;
+            color: #42210b;
+        }
+
+        #login-form > div > label > span {
+            color: red;
+        }
+
+        .fields {
+            display: block;
+            font-size: 17px;
+            padding: 10px 5px;
+            font-weight: 400;
+            font-family: 'Ubuntu', sans-serif;
+            border: 2px solid #F6F1E9;
+            outline: none;
+            width: 100%;
+        }
+
+        .sbm-btn {
+            background-color: #42210b;
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-weight: 400;
+            font-family: 'Play', sans-serif;
+            width: 100%;
+            padding: 7px;
+            text-transform: capitalize;
+            margin: 25px 0 5px;
+        }
+
+        #login-form > small {
+            margin: 10px 0 5px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+        }
+
+        #login-form > small > a {
+            text-transform: capitalize;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 15px;
+            color: #DF2E38;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>UG-Admissions portal</h1>
-        <a href="../index.php"><i class="fa-solid fa-house"></i></a>
-    </div>
-    <!-- login form -->
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" id="login-form" method="POST">
-        <fieldset>
-            <legend>Login if you already have an account</legend>
-            <!-- front-end form validation -->
-            <label for="uname">Username: <span class="req">*</span></label>
-            <input type="text" name="uname" id="uname" class="fields" required>
-            <label for="psw">Password: <span class="req">*</span></label>
-            <input type="password" name="psw" id="psw" class="fields" required>
-        </fieldset>
+    <header>
+        <a href="../index.php">heightstu</a>
+        <h1>Welcome back!</h1>
+        <p>Login to your account</p>
+    </header>
+    <form id="login-form">
+        <div>
+            <label for="username">username<span>*</span></label>
+            <input class="fields" type="text" name="username" id="username" required>
+        </div>
+        <div>
+            <label for="psw">password<span>*</span></label>
+            <input class="fields" type="password" name="password" id="password" required>
+        </div>
+        <input class="sbm-btn" type="submit" name="submit" value="login">
+
+        <small>Don't have an account? <a href="register.php">register</a></small>
     </form>
-    <button type="submit" form="login-form" class="submit-btn">login <i class="fa-solid fa-arrow-right"></i></button>
-    <!-- or create an account link -->
-    <a href="register.php" id="or-link">Or create a new account here</a>
 </body>
 </html>
