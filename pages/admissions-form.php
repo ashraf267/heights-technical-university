@@ -59,173 +59,240 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/c84a86a0b9.js" crossorigin="anonymous"></script>
-        <style>
+        <title>Admission Form | HeightsTU</title>
+        <style type="text/css">
             * {
-                margin: 0;
-                padding: 0;
-            }
-            .header {
-                background-color: #42210b;
-            }
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            .header h1 {
-                border: 1px solid black;
-                text-align: center;
-                font-size: 18px;
-                color: #f7921e;
-                padding: 7px 8px;
-                text-transform: uppercase;
-                font-family: 'Montserrat', sans-serif;
-            }
+        body {
+            background-color: rgba(246, 241, 233, 0.5);
+        }
 
-            #sub-header {
-                border: 1px solid black;
-                margin: 20px 5px;
-                padding: 5px;
-                font-family: 'Montserrat', sans-serif;
-            }
+        header {
+            text-align: center;
+            margin: 20px 0 40px;
+        }
 
-            form {
-                margin: 0 5px;
-                padding: 5px;
-                border: 1px solid black;
-            }
+        header h1 {
+            font-size: 32px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin: 5px 0;
+        }
 
-            .sub-header {
-                margin: 20px 0 5px;
-                background-color: grey;
-                padding: 4px 1px;
-            }
+        header p {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+        }
 
-            .sub-header h2 {
-                font-size: 16px;
-                font-family: 'Montserrat', sans-serif;
-                text-align: center;
-                text-transform: capitalize;
-            }
+        header a {
+            display: block;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #42210b;
+            font-size: 50px;
+            font-weight: 700;
+            font-family: 'Play', sans-serif;
+            margin: 10px 0;
+        }
 
-            label {
-                display: block;
-                font-family: 'Montserrat', sans-serif;
-                text-transform: capitalize;
-            }
+        /* admissions form */
+        #adm-form {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 25px 50px;
+        }
 
-            .req {
-                color: red;
-                padding: 0 1px;
-                text-align: center;
-            }
+        #adm-form > div {
+            margin: 5px 0 10px;
+        }
 
-            .fields {
-                font-family: 'Montserrat', sans-serif;
-                padding: 5px 1px;
-                margin: 3px 1px;
-            }
+        #adm-form > fieldset {
+            margin: 5px 0 10px;
+            border: 2px solid #F6F1E9;
+            border-radius: 5px;
+            padding: 2px 8px;
+        }
 
-            #note {
-                border: 1px solid red;
-                font-family: 'Montserrat', sans-serif;
-                padding: 2px 3px;
-                font-style: italic;
-                margin: 9px 1px;
-            }
+        #adm-form > fieldset > legend {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 16px;
+            padding: 0 5px;
+            color: #42210b;
+        }
 
-            .center-box {
-                width: 50%;
-                margin: 5px auto;
-                text-align: center;
-            }
+        #adm-form > fieldset > legend > span {
+            color: red;
+        }
 
-            .submit-btn {
-                border: 1px solid black;
-                margin: 5px 10px;
-                font-size: 17px;
-                padding: 5px 3px;
-                background-color: transparent;
-                font-family: 'Montserrat', sans-serif;
-                text-transform: capitalize;
-            }
+        /*
+        #adm-form > div > label {
+            display: block;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 15px;
+            margin: 5px 0;
+            padding: 5px 0;
+            color: #42210b;
+        }
 
-            .submit-btn i {
-                border: 1px solid red;
-                margin-left: 2px;
-                padding: 2px 1px;
-            }
+        #adm-form > div > label > span {
+            color: red;
+        }
+        */
+
+        .fields {
+            display: block;
+            font-size: 14px;
+            /* padding: 10px 5px; */
+            padding: 3px 2px;
+            font-weight: 400;
+            font-family: 'Ubuntu', sans-serif;
+            /* border: 2px solid #F6F1E9; */
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .border-bottom {
+            outline: none;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 3px 2px;
+            width: 15%;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid #DBE4C6;
+            border-left: none;
+            margin: 5px 5px;
+            text-transform: capitalize;
+        }
+
+        #adm-form > fieldset:nth-child(9) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #adm-form > fieldset:nth-child(9) > select {
+            width: 30%;
+            color: grey;
+            margin: 4px 6px;
+        }
+
+        #note {
+            padding: 5px 10px;
+        }
+        
+        #note > p {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: grey;
+        }
+        
+        #note > p > span {
+            color: red;
+        }
+
+        .sbm-btn {
+            background-color: #68B984;
+            color: white;
+            border: none;
+            font-size: 25px;
+            font-weight: 400;
+            font-family: 'Play', sans-serif;
+            width: 100%;
+            padding: 7px;
+            text-transform: capitalize;
+            margin: 25px 0 5px;
+        }
         </style>
     </head>
     <body>
-        <!-- form for new undergraduate students -->
-        <div class="header">
-            <h1>Heights technical university</h1>
-        </div>
-        <div id="sub-header">
-            <p>Hello, prospective undergraduate student! We are excited that you are interested
-                in applying to our reputable Heights Technical University, Ilorin, Kwara, Nigeria.
-                Please, to the best of your knowledge, complete and submit the form below.
-                We sincerely look forward to your applications and ultimately holding your hands throughout
-                your next academic journey.
-            </p>
-        </div>
-        <!-- form starts here -->
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="adms-form" method="POST">
-            <label for="fname">First name <span class="req">*</span></label>
-            <input class="fields" type="text" id="fname" name="fname" required>
-            <label for="midname">Middle name</label>
-            <input type="text" name="midname" id="midname" class="fields" required>
-            <label for="lname">Last name <span class="req">*</span></label>
-            <input class="fields" type="text" id="lname" name="lname" required>
-            <label for="dob">Birthdate <span class="req">*</span></label>
-            <input class="fields" type="date" id="dob" name="dob" required>
-            <div class="sub-header">
-                <h2>Contact information</h2>
-            </div>
-            <label for="email">Email <span class="req">*</span></label>
-            <input class="fields" type="email" id="email" name="email" required>
-            <label for="phone">Phone Number <span class="req">*</span></label>
-            <input class="fields" type="tel" id="phone" name="phone" placeholder="0913-459-6317" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
-            <label>Address <span class="req">*</span></label>
-            <input class="fields" type="text" id="addr-str" name="addr-str" placeholder="Street address" required>
-            <input class="fields" type="text" id="addr-city" name="addr-city" placeholder="City" required>
-            <input class="fields" type="text" id="addr-state" name="addr-state" placeholder="State" required>
-            <input class="fields" type="text" id="addr-country" name="addr-country" placeholder="Country" required>
-            <div class="sub-header">
-                <h2>Academic plan</h2>
-            </div>
-            <label for="start-year">Program start year? <span class="req">*</span></label>
-            <select class="fields" id="start-year" name="start-year" required>
-                <option value=""></option>
+        <header>
+        <a href="../index.php">heightstu</a>
+        <h1>Application form</h1>
+        <p>Fill in your details below</p>
+    </header>
+    <form id="adm-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+        <fieldset>
+            <legend>firstname<span>*</span></legend>
+            <input class="fields" type="text" name="fname" id="fname" required>
+        </fieldset>
+        <fieldset>
+            <legend>middlename</legend>
+            <input class="fields" type="text" name="mname" id="mname">
+        </fieldset>
+        <fieldset>
+            <legend>lastname<span>*</span></legend>
+            <input class="fields" type="text" name="lname" id="lname" required>
+        </fieldset>
+        <fieldset>
+            <legend>username<span>*</span></legend>
+            <input class="fields" type="text" name="username" id="username" required>
+        </fieldset>
+        <fieldset>
+            <legend>email<span>*</span></legend>
+            <input class="fields" type="email" name="email" id="email" required>
+        </fieldset>
+        <fieldset>
+            <legend>birthdate</legend>
+            <input class="fields" type="date" name="dob" id="dob" required>
+        </fieldset>
+        <fieldset>
+            <legend>phone-no</legend>
+            <input class="fields" type="tel" name="" id="" placeholder="0913-459-6317" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
+        </fieldset>
+        <fieldset style="display: flex; flex-direction: row; justify-content: space-around;">
+            <legend>address</legend>
+            <input class="border-bottom" style="flex-grow: 2;" type="text" name="" id="" placeholder="street" required>
+            <input class="border-bottom" type="text" name="" id="" placeholder="city" required>
+            <input class="border-bottom" type="text" name="" id="" placeholder="state" required>
+            <input class="border-bottom" type="text" name="" id="" placeholder="country" required>
+        </fieldset>
+        <fieldset>
+            <legend>academic plan</legend>
+            <select class="border-bottom" name="" id="" required>
+                <option value="#">start year?</option>
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
             </select>
-            <label for="student-type">I will be a? <span class="req">*</span></label>
-            <select class="fields" id="student-type" name="student-type" required>
-                <option value=""></option>
-                <option value="first-year student">First-year Student</option>
-                <option value="transfer student">Transfer Student</option>
+            <select class="border-bottom" name="" id="" required>
+                <option value="#">student type?</option>
+                <option value="first-year">first-year</option>
+                <option value="transfer">transfer</option>
             </select>
-            <label for="course-to-study">Intended course of study? <span class="req">*</span></label>
-            <select class="fields" id="course-to-study" name="course-to-study" required>
-                <option value=""></option>
-                <option value="computer sci">Computer Science</option>
-                <option value="software eng">Software Engineering</option>
-                <option value="civil eng">Civil Engineering</option>
-                <option value="elect elect eng">Electrical & Electronics Engineering</option>
-                <option value="material eng">Material Engineering</option>
-                <option value="telecomm sci">Telecommunication Science</option>
+            <select class="border-bottom" name="" id="" required>
+                <option value="#">preferred course?</option><option value="">computer science</option>
+                <option value="">civil engineering</option>
+                <option value="">mechanical engineering</option>
+                <option value="">computer engineering</option>
             </select>
-            <hr style="margin: 10px 0;">
-            <div id="note">
-                <p>Note: your original WAEC certificate, High-school transcripts (SS1-3), 
-                    JAMB results, and other relevant documents should be attached and sent separately
-                    to our Admission team's email: <strong>prospectiveugstudents@htu.edu.ng</strong> (using the tag "Supporting Documents: ", your full-name and intended course of study as subject)
-                </p>
-            </div>
-        </form>
-        <div class="center-box">
-            <button type="submit" onclick="window.alert('Form submitted successfully!')" form="adms-form" class="submit-btn">submit <i class="fa-solid fa-check"></i></button:type>
+        </fieldset>
+        <div id="note">
+            <p>
+                <span>** </span>Note: your original WAEC certificate, High-school transcripts (SS1-3), JAMB results, and other relevant documents should be attached and sent separately to our Admission team's email: <em>ugadmissions@htu.edu.ng</em> (using the tag "Supporting Documents: ", your full-name and intended course of study as subject)
+            </p>
         </div>
+        <!-- submit button -->
+        <input class="sbm-btn" type="submit" name="submit" value="submit">
+    </form>
     </body>
 </html>

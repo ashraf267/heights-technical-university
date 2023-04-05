@@ -11,12 +11,12 @@
         // get and protect values the mysqli way
         $firstname = mysqli_real_escape_string($conn, $_POST['fname']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lname']);
-        $username = mysqli_real_escape_string($conn, $_POST['uname']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['psw']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         // construct query
-        $sql = "INSERT INTO applicants(firstname, lastname, username, email, pass_word) VALUES('$firstname', '$lastname', '$username', '$email', '$password')";
+        $sql = "INSERT INTO applicants(firstname, lastname, username, email, password) VALUES('$firstname', '$lastname', '$username', '$email', '$password')";
 
         // make query and check for errors
         if (mysqli_query($conn, $sql)) {
@@ -155,7 +155,7 @@
         <h1>Admissions</h1>
         <p>Register your account</p>
     </header>
-    <form id="register-form">
+    <form id="register-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div>
             <label for="fname">firstname<span>*</span></label>
             <input class="fields" type="text" name="fname" id="fname" required>
@@ -173,7 +173,7 @@
             <input class="fields" type="email" name="email" id="email" required>
         </div>
         <div>
-            <label for="psw">password<span>*</span></label>
+            <label for="password">password<span>*</span></label>
             <input class="fields" type="password" name="password" id="password" required>
         </div>
         <input class="sbm-btn" type="submit" name="submit" value="register">
