@@ -17,7 +17,7 @@
 
         // get and protect values the mysqli
         $firstname = mysqli_real_escape_string($conn, $_POST['fname']);
-        $midname = mysqli_real_escape_string($conn, $_POST['midname']);
+        $midname = mysqli_real_escape_string($conn, $_POST['middlename']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lname']);
         $dob = mysqli_real_escape_string($conn, $_POST['dob']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -26,13 +26,13 @@
         $addr_city = mysqli_real_escape_string($conn, $_POST['addr-city']);
         $addr_state = mysqli_real_escape_string($conn, $_POST['addr-state']);
         $country = mysqli_real_escape_string($conn, $_POST['addr-country']);
-        $start_year = mysqli_real_escape_string($conn, $_POST['start-year']);
+        $start_yr = mysqli_real_escape_string($conn, $_POST['start-year']);
         $applicant_type = mysqli_real_escape_string($conn, $_POST['student-type']);
         $course = mysqli_real_escape_string($conn, $_POST['course-to-study']);
         // ...
 
         // construct query
-        $sql = "INSERT INTO adm_applications(firstname, middlename, lastname, birthdate, email, phone_no, str_addr, city_addr, state_addr, country, start_year, applicant_type, course) VALUES('$firstname', '$midname', '$lastname', '$dob', '$email', '$phone', '$addr_str', '$addr_city', '$addr_state', '$country', '$start_year', '$applicant_type', '$course')";
+        $sql = "INSERT INTO adm_applications(firstname, middlename, lastname, birthdate, email, phone_no, str_addr, city_addr, state_addr, country, start_yr, applicant_type, course) VALUES('$firstname', '$midname', '$lastname', '$dob', '$email', '$phone', '$addr_str', '$addr_city', '$addr_state', '$country', '$start_yr', '$applicant_type', '$course')";
 
         // make query and check for errors
         if (mysqli_query($conn, $sql)) {
@@ -257,33 +257,34 @@
         </fieldset>
         <fieldset>
             <legend>phone-no</legend>
-            <input class="fields" type="tel" name="" id="" placeholder="0913-459-6317" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
+            <input class="fields" type="tel" name="phone" id="phone" placeholder="0913-459-6317" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
         </fieldset>
         <fieldset style="display: flex; flex-direction: row; justify-content: space-around;">
             <legend>address</legend>
-            <input class="border-bottom" style="flex-grow: 2;" type="text" name="" id="" placeholder="street" required>
-            <input class="border-bottom" type="text" name="" id="" placeholder="city" required>
-            <input class="border-bottom" type="text" name="" id="" placeholder="state" required>
-            <input class="border-bottom" type="text" name="" id="" placeholder="country" required>
+            <input class="border-bottom" style="flex-grow: 2;" type="text" name="addr-str" id="addr-str" placeholder="street" required>
+            <input class="border-bottom" type="text" name="addr-city" id="addr-city" placeholder="city" required>
+            <input class="border-bottom" type="text" name="addr-state" id="addr-state" placeholder="state" required>
+            <input class="border-bottom" type="text" name="addr-country" id="addr-country" placeholder="country" required>
         </fieldset>
         <fieldset>
             <legend>academic plan</legend>
-            <select class="border-bottom" name="" id="" required>
-                <option value="#">start year?</option>
+            <select class="border-bottom" name="start-year" id="start-year" required>
+                <option value="">start year?</option>
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
             </select>
-            <select class="border-bottom" name="" id="" required>
-                <option value="#">student type?</option>
+            <select class="border-bottom" name="student-type" id="student-type" required>
+                <option value="">student type?</option>
                 <option value="first-year">first-year</option>
                 <option value="transfer">transfer</option>
             </select>
-            <select class="border-bottom" name="" id="" required>
-                <option value="#">preferred course?</option><option value="">computer science</option>
-                <option value="">civil engineering</option>
-                <option value="">mechanical engineering</option>
-                <option value="">computer engineering</option>
+            <select class="border-bottom" name="course-to-study" id="" required>
+                <option value="">preferred course?</option>
+                <option value="CSC">computer science</option>
+                <option value="CVENG">civil engineering</option>
+                <option value="MECHENG">mechanical engineering</option>
+                <option value="CENG">computer engineering</option>
             </select>
         </fieldset>
         <div id="note">

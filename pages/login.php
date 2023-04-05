@@ -188,6 +188,7 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
     <form id="login-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div>
             <label for="uname">username<span>*</span></label>
+            <!-- form validation using the HTML required attr & correct input type -->
             <input class="fields" type="text" name="uname" id="uname" required>
         </div>
         <div>
