@@ -128,11 +128,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background-color: rgba(246, 241, 233, 0.3);
+            background-blend-mode: overlay;
         }
 
         #banner .children {
             text-align: center;
             margin: 15px 10px 5px;
+            color: #42210b;
         }
 
         #banner h1 {
@@ -146,7 +149,6 @@
         #banner h2 {
             padding: 15px 0;
             text-transform: uppercase;
-            color: white;
             font-family: 'Ubuntu', sans-serif;
             font-weight: 500;
             font-size: 48px;
@@ -154,7 +156,6 @@
 
         #banner p {
             padding: 10px 0;
-            color: white;
             font-family: 'Ubuntu', sans-serif;
             font-weight: 500;
             font-size: 32px;

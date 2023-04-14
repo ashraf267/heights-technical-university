@@ -4,13 +4,17 @@
 
 // check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['uname'];
+    session_start();
+
+    $_SESSION['uname'] = $_POST['uname'];
+    $username = $_SESSION['uname'];
     $password = $_POST['password'];
 
     // call findApplicant function here
     findApplicant($username, $password);
 }
 
+// user authentication
 function findApplicant(string $user_name, string $pass_word, array $isFound = array(false, false)) {
     // connect to db
     include('../connect-db.php');
@@ -47,10 +51,12 @@ function findApplicant(string $user_name, string $pass_word, array $isFound = ar
     }
 
     // found or not
+    // REDIRECT!
     function redirect() {
         header('Location: admissions-form.php');
     }
 
+    // WINDOW.ALERT() built-in DOM function
     function errorMsg() {
         echo "<script>window.alert('Incorrect username/password')</script>";
     }
