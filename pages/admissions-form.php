@@ -5,8 +5,7 @@
 
     // session
     session_start();
-    $username = $_SESSION['uname'];
-
+    $username = ucfirst($_SESSION['uname']);
     echo "<script>window.alert('Welcome, $username')</script>";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
